@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { FC } from 'react';
-import { css, jsx } from '@emotion/react';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import { Home, Person, Search, ChatBubble } from '@mui/icons-material';
 

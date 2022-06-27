@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
 import React, { FC, useState } from 'react';
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import TopNav from './Layout/TopNav';
 import BottomNav from './Layout/BottomNav';
-import Loginform from './Loginform';
+import Greeting from '../pages/greeting';
 
 const mainContent = css`
   padding-top: 70px;
@@ -17,9 +17,9 @@ type LayoutProps = {
 const AppLayout: FC<LayoutProps> = ({ children }) => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   return (
-    <>
+    <Container maxWidth="md">
       {!isLoggedIn ? (
-        <Loginform />
+        <Greeting />
       ) : (
         <>
           <TopNav />
@@ -31,7 +31,7 @@ const AppLayout: FC<LayoutProps> = ({ children }) => {
           <BottomNav />
         </>
       )}
-    </>
+    </Container>
   );
 };
 
