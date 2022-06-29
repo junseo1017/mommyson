@@ -1,7 +1,7 @@
 import '../style/_app.css';
 import 'antd/dist/antd.css';
 import Head from 'next/head'; //head 정도를 수정
-
+import wrapper from '../store/';
 import type { AppProps } from 'next/app';
 
 const Mommyson = ({ Component, pageProps }: AppProps) => {
@@ -20,4 +20,4 @@ const Mommyson = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default Mommyson;
+export default wrapper.withRedux(Mommyson);
