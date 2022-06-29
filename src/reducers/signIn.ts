@@ -1,21 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface stateState {
-  status: 'pending' | 'checking' | 'existing' | 'newuser';
+export interface signInState {
+  status: 'starting' | 'checking' | 'existing' | 'newuser';
 }
 
-const initialState: stateState = { status: 'pending' };
-export type signInState = typeof initialState;
+const initialState: signInState = { status: 'starting' };
 
 const SignInSlice = createSlice({
   name: 'SignInStatus',
   initialState,
   reducers: {
-    checkUser(state) {
+    startSignIn(state) {
       state.status = 'checking';
     },
   },
 });
 
-export const SignInSliceAcitons = SignInSlice.actions;
+export const SignInActions = SignInSlice.actions;
 export default SignInSlice;
