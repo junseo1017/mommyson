@@ -1,35 +1,12 @@
-import type { NextPage } from 'next';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
-type signInForm = {
-  userid: string;
-  userpw: string;
-};
-
-const SignIn: NextPage = () => {
-  const { handleSubmit, register } = useForm<signInForm>();
-  const onSignInSubmitHandler = handleSubmit((data) => {
-    console.log(data);
-  });
-
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from '@emotion/react';
+import SignInLayout from '../components/SignIn/SignInLayout';
+import SignInUserCheck from '../components/SignIn/SignInUserCheck';
+const SignIn = () => {
   return (
-    <div>
-      <form onSubmit={onSignInSubmitHandler}>
-        <input
-          type="text"
-          placeholder="Please Input your ID"
-          {...register('userid', {
-            minLength: {
-              value: 5,
-              message: 'Username must be longer than 5 characters',
-            },
-          })}
-        />
-        <input type="password" placeholder="Please Input your password" {...register('userpw')} />
-
-        <input type="submit" value="login" />
-      </form>
-    </div>
+    <SignInLayout>
+      <SignInUserCheck />
+    </SignInLayout>
   );
 };
 

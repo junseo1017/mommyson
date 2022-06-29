@@ -1,25 +1,24 @@
 import type { NextPage } from 'next';
-import AppLayout from 'src/components/AppLayout';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 const Home: NextPage = () => {
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push('/signin');
+    }
+  }, []);
+
   return (
-    <AppLayout>
+    <>
       <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-    </AppLayout>
+      <Link href="/signin">
+        <a>버튼</a>
+      </Link>
+    </>
   );
 };
 
