@@ -13,6 +13,12 @@ const SignInSlice = createSlice({
     startSignIn(state) {
       state.status = 'checking';
     },
+    existUser(state) {
+      state.status = 'existing';
+    },
+    newUser(state) {
+      state.status = 'newuser';
+    },
   },
 });
 

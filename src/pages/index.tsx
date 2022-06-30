@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
 const Home: NextPage = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);

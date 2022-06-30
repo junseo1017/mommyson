@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
-import styled from '@emotion/styled';
-import { Button } from 'antd';
-import SignInSlice from '../../reducers/signIn';
+import React, { useCallback, FC } from 'react';
+import { SignInButton } from './UI/SignInUI';
+import { ButtonContainer } from './UI/SignInContainer';
+import SignInSlice from 'src/reducers/signIn';
 import { useDispatch, useSelector } from 'react-redux';
-import { PState } from '../../reducers/rootreducer';
+import { PState } from 'src/reducers/rootreducer';
 
-import { useCallback } from 'react';
-export const SignInStyle = css`
+const SignInStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,28 +18,7 @@ export const SignInStyle = css`
   }
 `;
 
-export const ButtonContainer = css`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 8vh;
-`;
-
-export const SignInButton = styled(Button)`
-  background-color: #7da6e3;
-  width: 90%;
-  height: 100%;
-  @media (min-width: 578px) {
-    width: 50vw;
-  }
-  & h2 {
-    color: white;
-    font-size: 16px;
-    margin: 0;
-  }
-`;
-
-const SignInStart = () => {
+const SignInStart: FC = () => {
   const dispatch = useDispatch();
   const { status } = useSelector<PState, any>((state) => state.signin);
 

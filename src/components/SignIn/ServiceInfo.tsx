@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
+import { FC } from 'react';
 
 const infoStyle = css`
   display: flex;
@@ -17,7 +18,7 @@ const infoStyle = css`
   }
 `;
 
-const ServiceInfo = () => {
+const ServiceInfo: FC = () => {
   return (
     <div css={infoStyle}>
       <img src="/img/logo.png" alt="mommysonlogo" />

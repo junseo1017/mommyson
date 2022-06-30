@@ -1,10 +1,9 @@
-/** @jsxImportSource @emotion/react */
-import { css, jsx } from '@emotion/react';
 import SignInLayout from '../components/SignIn/SignInLayout';
 import SignInStart from '../components/SignIn/SignInStart';
 import SignInUserCheck from 'src/components/SignIn/SignInUserCheck';
+import SignInAuthUser from '../components/SignIn/SignInExistUser';
 import { useSelector } from 'react-redux';
-import { PState } from '../.../../reducers/rootreducer';
+import { PState } from 'src/reducers/rootreducer';
 
 const SignIn = () => {
   const { status } = useSelector<PState, any>((state) => state.signin);
@@ -14,7 +13,8 @@ const SignIn = () => {
     SignInflow = <SignInStart />;
   } else if (status === 'checking') {
     SignInflow = <SignInUserCheck />;
-  } else if (status === '') {
+  } else {
+    SignInflow = <SignInAuthUser />;
   }
 
   return <SignInLayout>{SignInflow}</SignInLayout>;

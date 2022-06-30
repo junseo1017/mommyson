@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
-import { css, jsx } from '@emotion/react';
 import React, { FC } from 'react';
-import { Row, Col, Button } from 'antd';
+import { Row, Col } from 'antd';
 import ServiceInfo from './ServiceInfo';
 import CommmonComponent from '../../types/CommonComponents';
 
@@ -13,8 +11,10 @@ const SignInLayout: FC<CommmonComponent> = ({ children }) => {
           <ServiceInfo />
         </Col>
       </Row>
-      <Row justify="end" align="bottom" style={{ minHeight: '40vh' }}>
-        <Col xs={24}>{children}</Col>
+      <Row justify="center" align="bottom" style={{ minHeight: '40vh' }}>
+        <Col xs={24} md={12}>
+          {children}
+        </Col>
       </Row>
     </div>
   );
