@@ -7,6 +7,10 @@ export const UserInputStyle = css`
   flex-direction: column;
   align-items: center;
   gap: 1vh;
+  & > h2 {
+    margin: 0;
+    font-size: 18px;
+  }
 `;
 
 export const ButtonContainer = css`

@@ -16,12 +16,7 @@ const Mommyson = ({ Component, pageProps }: AppProps) => {
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="annonymous" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
-            rel="stylesheet"
-          />
+          <title>MommySon</title>
         </Head>
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false} />

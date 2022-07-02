@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Row, Col } from 'antd';
 import ServiceInfo from './ServiceInfo';
-import CommmonComponent from '../../types/CommonComponents';
+import CommmonComponent from '../../types/Commontype';
 
 const SignInLayout: FC<CommmonComponent> = ({ children }) => {
   return (

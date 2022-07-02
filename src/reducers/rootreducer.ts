@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 import SignInSlice, { signInState } from './signIn';
-
+import SignUpSlice, { signUpState } from './signUp';
 export interface PState {
   signin: signInState;
+  signup: signUpState;
 }
 
 // (이전상태, 액션) => 다음상태
@@ -14,6 +15,7 @@ const rootReducer = (state: PState, action: any) => {
     default: {
       const combinedReducer = combineReducers({
         signin: SignInSlice.reducer,
+        signup: SignUpSlice.reducer,
       });
       return combinedReducer(state, action);
     }

@@ -4,9 +4,11 @@ import { useCallback, useRef, FC } from 'react';
 import { SignInButton, SignInInput } from './UI/SignInUI';
 import { UserInputStyle, ButtonContainer } from './UI/SignInContainer';
 import SignInSlice from 'src/reducers/signIn';
+import SignUpSlice from 'src/reducers/signUp';
+
 import { useQuery } from 'react-query';
 import { checkUserExist } from 'src/apis/user';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { InputEvent } from 'src/types/Commontype';
 
 const SignInUserCheck: FC = () => {
@@ -24,6 +26,7 @@ const SignInUserCheck: FC = () => {
     if (checkExistUser[0]) {
       dispatch(SignInSlice.actions.existUser());
     } else {
+      dispatch(SignUpSlice.actions.saveNumber(inputRef.current));
       dispatch(SignInSlice.actions.newUser());
     }
   }, [userdata]);

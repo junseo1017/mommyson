@@ -1,7 +1,7 @@
 import SignInLayout from '../components/SignIn/SignInLayout';
 import SignInStart from '../components/SignIn/SignInStart';
 import SignInUserCheck from 'src/components/SignIn/SignInUserCheck';
-import SignInAuthUser from '../components/SignIn/SignInExistUser';
+import SignInAuthUser from '../components/SignIn/SignInAuthUser';
 import { useSelector } from 'react-redux';
 import { PState } from 'src/reducers/rootreducer';
 

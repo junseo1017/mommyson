@@ -2,23 +2,22 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
+import { useSelector } from 'react-redux';
+import { PState } from 'src/reducers/rootreducer';
+import AppLayout from 'src/components/AppLayout';
 const Home: NextPage = () => {
   const router = useRouter();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { status } = useSelector<PState, any>((state) => state.signin);
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (status === 'loggedin') {
       router.push('/signin');
     }
-  }, []);
+  }, [status]);
 
   return (
     <>
-      <h1>hi</h1>
-      <Link href="/signin">
-        <a>버튼</a>
-      </Link>
+      <AppLayout />
     </>
   );
 };
