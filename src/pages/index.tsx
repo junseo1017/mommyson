@@ -6,7 +6,11 @@ import { useSelector } from 'react-redux';
 import { PState } from 'src/reducers/rootreducer';
 import { barHeight } from 'src/components/MainLayout/UI/navstyle';
 import AppLayout from 'src/components/AppLayout';
-const Home: NextPage = () => {
+import Home from 'src/components/Home';
+import Gether from 'src/components/Gether';
+import Profile from 'src/components/Profile';
+import Square from 'src/components/Square';
+const Main: NextPage = () => {
   const router = useRouter();
   const { status } = useSelector<PState, any>((state) => state.signin);
   const { home, gether, square, profile } = useSelector<PState, any>((state) => state.curNav);
@@ -21,20 +25,14 @@ const Home: NextPage = () => {
     <>
       <AppLayout>
         <div style={{ marginTop: barHeight }}>
-          <h1>hi1</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
-          <h1>hi</h1>
+          {home && <Home />}
+          {gether && <Gether />}
+          {square && <Square />}
+          {profile && <Profile />}
         </div>
       </AppLayout>
     </>
   );
 };
 
-export default Home;
+export default Main;

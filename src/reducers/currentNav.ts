@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ClickEvent } from 'src/types/Commontype';
 export interface curNavState {
   home: boolean;
   gether: boolean;
