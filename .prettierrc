@@ -8,8 +8,5 @@
   "endOfLine": "auto",
   "parser": "typescript",
   "useTabs": false,
-  "arrowParens": "always",
-  "[json]": {
-    "editor.formatOnSave": false   
-}
+  "arrowParens": "always"
 }

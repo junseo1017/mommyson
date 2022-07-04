@@ -6,7 +6,7 @@ export interface signUpState {
 
 const initialState: signUpState = { userNumber: '' };
 
-const SignUpSlice = createSlice({
+const signUpSlice = createSlice({
   name: 'SignInStatus',
   initialState,
   reducers: {
@@ -16,5 +16,5 @@ const SignUpSlice = createSlice({
   },
 });
 
-export const SignUpActions = SignUpSlice.actions;
-export default SignUpSlice;
+export const signUpActions = signUpSlice.actions;
+export default signUpSlice;

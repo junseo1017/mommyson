@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { stat } from 'fs';
 
 export interface signInState {
   status: 'starting' | 'checking' | 'existing' | 'newuser' | 'loggedin';
@@ -7,7 +6,7 @@ export interface signInState {
 
 const initialState: signInState = { status: 'starting' };
 
-const SignInSlice = createSlice({
+const signInSlice = createSlice({
   name: 'SignInStatus',
   initialState,
   reducers: {
@@ -26,5 +25,5 @@ const SignInSlice = createSlice({
   },
 });
 
-export const SignInActions = SignInSlice.actions;
-export default SignInSlice;
+export const SignInActions = signInSlice.actions;
+export default signInSlice;

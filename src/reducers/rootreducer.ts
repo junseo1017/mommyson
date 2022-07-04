@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
-import SignInSlice, { signInState } from './signIn';
-import SignUpSlice, { signUpState } from './signUp';
+import signInSlice, { signInState } from './signIn';
+import signUpSlice, { signUpState } from './signUp';
+import curNavSlice, { curNavState } from './currentNav';
 export interface PState {
   signin: signInState;
   signup: signUpState;
+  curNav: curNavState;
 }
 
 // (이전상태, 액션) => 다음상태
@@ -14,8 +16,9 @@ const rootReducer = (state: PState, action: any) => {
       return action.payload;
     default: {
       const combinedReducer = combineReducers({
-        signin: SignInSlice.reducer,
-        signup: SignUpSlice.reducer,
+        signin: signInSlice.reducer,
+        signup: signUpSlice.reducer,
+        curNav: curNavSlice.reducer,
       });
       return combinedReducer(state, action);
     }

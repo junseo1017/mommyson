@@ -5,3 +5,4 @@ export default interface CommonComponent {
 }
 
 export type InputEvent = React.ChangeEvent<HTMLInputElement>;
+export type ClickEvent = React.MouseEvent<HTMLElement>;
