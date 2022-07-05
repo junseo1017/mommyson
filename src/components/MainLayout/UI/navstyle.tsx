@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/react';
 export const barHeight = '60px';
 
 export const BNavBarStyle = css`
-  z-index: 1000000;
+  z-index: 50000;
   display: flex;
   align-items: center;
   justify-content: center;

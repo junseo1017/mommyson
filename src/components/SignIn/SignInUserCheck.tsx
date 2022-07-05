@@ -5,7 +5,6 @@ import { SignInButton, SignInInput } from './UI/SignInUI';
 import { UserInputStyle, ButtonContainer } from './UI/SignInContainer';
 import SignInSlice from 'src/reducers/signIn';
 import SignUpSlice from 'src/reducers/signUp';
-
 import { useQuery } from 'react-query';
 import { checkUserExist } from 'src/apis/user';
 import { useDispatch } from 'react-redux';
@@ -24,10 +23,9 @@ const SignInUserCheck: FC = () => {
       (e: { phonenumber: string }) => e.phonenumber === inputRef.current
     );
     if (checkExistUser[0]) {
-      dispatch(SignInSlice.actions.existUser());
+      dispatch(SignInSlice.actions.existUser(inputRef.current));
     } else {
-      dispatch(SignUpSlice.actions.saveNumber(inputRef.current));
-      dispatch(SignInSlice.actions.newUser());
+      dispatch(SignInSlice.actions.newUser(inputRef.current));
     }
   }, [userdata]);
   return (

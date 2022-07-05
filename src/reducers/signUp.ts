@@ -1,3 +1,5 @@
+// 회원가입 api 따로 둬야 함
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface signUpState {

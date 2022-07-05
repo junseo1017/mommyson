@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface signInState {
   status: 'starting' | 'checking' | 'existing' | 'newuser' | 'loggedin';
+  userNumber?: string;
 }
 
 const initialState: signInState = { status: 'starting' };
@@ -13,11 +14,13 @@ const signInSlice = createSlice({
     startSignIn(state) {
       state.status = 'checking';
     },
-    existUser(state) {
+    existUser(state, action) {
       state.status = 'existing';
+      state.userNumber = action.payload;
     },
-    newUser(state) {
+    newUser(state, action) {
       state.status = 'newuser';
+      state.userNumber = action.payload;
     },
     isloggedin(state) {
       state.status = 'loggedin';

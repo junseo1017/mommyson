@@ -9,9 +9,7 @@ const AppLayout: FC<CommmonComponent> = ({ children }) => {
     <div>
       <AppBar />
       <Row>
-        <Col xs={24} md={12}>
-          {children}
-        </Col>
+        <Col xs={24}>{children}</Col>
       </Row>
       <BottomNavBar />
     </div>

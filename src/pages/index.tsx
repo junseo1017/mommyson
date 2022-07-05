@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from '@emotion/react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { PState } from 'src/reducers/rootreducer';
@@ -21,14 +22,25 @@ const Main: NextPage = () => {
     }
   }, [status]);
 
+  const mainContentStyle = css`
+    margin-top: ${barHeight};
+    width: 100vw;
+    word-break: break-all;
+  `;
+
   return (
     <>
       <AppLayout>
-        <div style={{ marginTop: barHeight }}>
-          {home && <Home />}
-          {gether && <Gether />}
-          {square && <Square />}
-          {profile && <Profile />}
+        <div css={mainContentStyle}>
+          {home ? (
+            <Home />
+          ) : gether ? (
+            <Gether />
+          ) : square ? (
+            <Square />
+          ) : profile ? (
+            <Profile />
+          ) : null}
         </div>
       </AppLayout>
     </>
