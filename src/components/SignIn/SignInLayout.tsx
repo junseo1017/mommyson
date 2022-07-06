@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Row, Col } from 'antd';
 import ServiceInfo from './ServiceInfo';
-import CommmonComponent from '../../types/Commontype';
+import { CommonComponent } from 'src/types/Commontype';
 
-const SignInLayout: FC<CommmonComponent> = ({ children }) => {
+const SignInLayout: FC<CommonComponent> = ({ children }) => {
   return (
     <div>
       <Row justify="center" align="bottom" style={{ height: '40vh' }}>

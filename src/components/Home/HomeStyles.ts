@@ -1,9 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
-import { FC } from 'react';
-import { CommonComponent } from '../types/Commontype';
+import { barHeight } from '../MainLayout/UI/navstyle';
+export const homeContainer = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: ${barHeight * 1.3}px;
+  gap: 0.5rem;
+`;
 
-const HomeGetherBtnStyle = css`
+export const HomeGetherBtnStyle = css`
   height: 5rem;
   background-color: white;
   border: 1px solid #868a8a13;
@@ -26,8 +34,3 @@ const HomeGetherBtnStyle = css`
     font-size: 0.7rem;
   }
 `;
-
-const HomeGetherBtn: FC<CommonComponent> = ({ children }) => {
-  return <div css={HomeGetherBtnStyle}>{children}</div>;
-};
-export default HomeGetherBtn;

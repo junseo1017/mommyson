@@ -6,14 +6,8 @@ import { useSelector } from 'react-redux';
 import { checkUserExist } from 'src/apis/user';
 import { PState } from 'src/reducers/rootreducer';
 import HomeGetherBtn from './HomeGetherBtn';
-const homeContainer = css`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  gap: 0.5rem;
-`;
+import { homeContainer } from './HomeStyles';
+import HomeAddGetherBtn from './HomeAddGetherBtn';
 
 const Home = () => {
   const [gether, setGether] = useState<any>(false);
@@ -36,6 +30,7 @@ const Home = () => {
       return str;
     }
   };
+
   const getherMapping = () => {
     return gether.map((e: { id: number; title: string; description: string }) => (
       <HomeGetherBtn key={e.id}>
@@ -47,13 +42,8 @@ const Home = () => {
 
   return (
     <div css={homeContainer}>
-      {gether ? (
-        getherMapping()
-      ) : (
-        <HomeGetherBtn>
-          <h2>모임 추가하기</h2>
-        </HomeGetherBtn>
-      )}
+      {gether ? getherMapping() : null}
+      <HomeAddGetherBtn />
     </div>
   );
 };

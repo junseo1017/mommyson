@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
-import React, { useCallback, FC } from 'react';
+import { useCallback, FC } from 'react';
 import { SignInButton } from './UI/SignInUI';
 import { ButtonContainer } from './UI/SignInContainer';
 import SignInSlice from 'src/reducers/signIn';

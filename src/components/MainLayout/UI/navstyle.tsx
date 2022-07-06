@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
 
-export const barHeight = '60px';
+export const barHeight = 60;
 
 export const BNavBarStyle = css`
   z-index: 50000;
@@ -10,7 +10,7 @@ export const BNavBarStyle = css`
   justify-content: center;
   background-color: white;
   width: 100vw;
-  height: ${barHeight};
+  height: ${barHeight}px;
   position: fixed;
   bottom: 0;
   border-top: solid #868a8a73 0.1rem;
@@ -46,7 +46,7 @@ export const BNavBarStyle = css`
 
 export const AppBarStyle = css`
   z-index: 99999;
-  height: ${barHeight};
+  height: ${barHeight}px;
   width: 100vw;
   position: fixed;
   background-color: white;

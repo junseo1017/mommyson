@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { PState } from 'src/reducers/rootreducer';
 import { barHeight } from 'src/components/MainLayout/UI/navstyle';
 import AppLayout from 'src/components/AppLayout';
-import Home from 'src/components/Home';
+import Home from 'src/components/Home/Home';
 import Gether from 'src/components/Gether';
 import Profile from 'src/components/Profile';
 import Square from 'src/components/Square';
@@ -23,7 +23,7 @@ const Main: NextPage = () => {
   }, [status]);
 
   const mainContentStyle = css`
-    margin-top: ${barHeight};
+    margin-top: ${barHeight}px;
     width: 100vw;
     word-break: break-all;
   `;
