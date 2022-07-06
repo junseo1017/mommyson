@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default interface CommonComponent {
+export interface CommonComponent {
   children?: React.ReactNode;
 }
 

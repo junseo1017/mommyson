@@ -3,7 +3,7 @@
     "phonenumber":"01065761010",
     "nickname":"jking",
     "id":"01065761010",
-    "gether":[{"id":1,"title":"League of Legends"}]
+    "gether":[{"id":1,"title":"League of Legends","description":"리그 오브 레전드 유저들을 위한 게더입니다."},{"id":2,"title":"LostArk","description":"로스트 아크 유저들을 위한 게더입니다. 완전 웅장하고 멋있고 혼자 다해"},{"id":3,"title":"Overwatch","description":"오버워치 유저들을 위한 게더입니다. 이미 망해버린 게임이라 나는 하고 싶지 않아."}]
     },
     {
     "phonenumber":"01000000000",
